@@ -1,5 +1,6 @@
-package com.example.idenuncia.idenunciatabstest;
+package com.example.idenuncia.idenuncia;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -22,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+        tabLayout.addTab(tabLayout.newTab().setText("Minhas Denúncias"));
+        tabLayout.addTab(tabLayout.newTab().setText("Denúncias"));
+        tabLayout.addTab(tabLayout.newTab().setText("Usuário"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.container);
@@ -55,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                /*
+                TESTE - Tenta ir para a tela de login
+                Intent activity = new Intent(this, MainActivity.class);
+                activity.putExtra("message", "olá");
+                startActivity(activity);
+                */
             }
         });
     }

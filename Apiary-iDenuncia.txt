@@ -1,0 +1,199 @@
+FORMAT: 1A
+
+# iDenuncia
+Servicos-web para conexão do aplicativo iDenuncia.
+
+# Group Autorização
+Responsável pela autorização de usuarios
+
+## Cadastro de usuario [/cadastroUser]
+
+### Envia a requisição de cadastro de usuário [POST]
+Realiza o cadastro dos usuários.
+
++ Request (application/json)
+
+        {
+            "nomeCompleto" : "Felipe Kuninory Akitaya",
+            "email": "felipeakitaya@email.com.br",
+            "username" : "kuninory",
+            "senha": "123456"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "idUser" : 2010,
+            "username" : "kuninory",
+            "nomeCompleto" : "Felipe Kuninory Akitaya",
+            "email": "felipeakitaya@email.com.br"
+        }
+
++ Response 406 (application/json)
+
+        {
+            "mensagem" : "Teste 406!"
+        }
+
+## Login [/login]
+
+### Envia a requisição de login [POST]
+Realiza o login dos usuários.
+
++ Request (application/json)
+
+        {
+            "username" : "kuninory",
+            "senha": "123456"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "idUser" : 2010,
+            "username" : "kuninory",
+            "nomeCompleto" : "Felipe Kuninory Akitaya",
+            "email": "felipeakitaya@email.com.br"
+        }
+        
++ Response 406 (application/json)
+
+        {
+            "mensagem" : "Teste 406!"
+        }
+
+
+## Registro de Denúncias [/regDenuncias]
+
+### Envia a requisição de cadastro de denúncia [POST]
+Realiza o cadastro de denúncias.
+
++ Request (application/json)
+
+        {
+            "idUser" : 2010,
+            "tipoDenuncia": 2,
+            "localizacao": {
+                "lat": -16.32323223123,
+                "long": -49.3214716
+            },
+            "descricao" : "Texto da descrição da denúncia!"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "idDenuncia" : 1001
+        }
+
++ Response 406 (application/json)
+
+        {
+            "mensagem" : "Teste 406!"
+        }
+
+## Denúncias [/buscaDenuncias]
+
+### Envia a requisição de busca de denúncia [POST]
+Realiza a busca de denúncias, podendo ser as do próprio usuário ou as dos outros usuários.
+
++ Request (application/json)
+
+        {
+            "minhasDenun": 0,
+            "limite" : 5,
+            "ultimaDenunCarregada": 1001
+        }
+
++ Response 200 (application/json)
+
+        {
+            "denuncias" : [
+                    {
+                        "idDenuncia" : 1000,
+                        "tipoDenuncia": 2,
+                        "contadorDenun": 10,
+                        "data" : "2016-06-05T08:40:51.620Z"
+                    },{
+                        "idDenuncia" : 999,
+                        "tipoDenuncia": 5,
+                        "contadorDenun": 10,
+                        "data" : "2016-06-05T07:40:51.620Z"
+                    },{
+                        "idDenuncia" : 998,
+                        "tipoDenuncia": 4,
+                        "contadorDenun": 10,
+                        "data" : "2016-06-05T07:35:45.620Z"
+                    },{
+                        "idDenuncia" : 997,
+                        "tipoDenuncia": 2,
+                        "contadorDenun": 10,
+                        "data" : "2016-06-05T07:00:00.620Z"
+                    },{
+                        "idDenuncia" : 996,
+                        "tipoDenuncia": 1,
+                        "contadorDenun": 10,
+                        "data" : "2016-06-05T05:43:51.998Z"
+                    }
+                ]
+        }
+
++ Response 406 (application/json)
+
+        {
+            "mensagem" : "Teste 406!"
+        }
+
+### Busca alguma denúncia específica [GET]
+Busca uma denúncia específica, informada pelo idDenuncia na requisição.
+
++ Response 200 (application/json)
+
+        {
+            "idDenuncia" : 1001,
+            "tipoDenuncia": 2,
+            "localizacao": {
+                "lat": -16.32323223123,
+                "long": -49.3214716
+            },
+            "descricao" : "Texto da descrição da denúncia!",
+            "contadorDenun": 10,
+            "data" : "2016-06-05T05:43:51.998Z"
+        }
+        
++ Response 406 (application/json)
+
+        {
+            "mensagem" : "Teste 406!"
+        }
+        
+## Tipos de Denúncias [/buscaTiposDenuncias]
+
+### Envia a requisição de busca dos tipos de denúncia [GET]
+Realiza a busca dos tipos de denúncias.
+
++ Response 200 (application/json)
+
+        {
+            "tiposDenuncias" : [
+                    {
+                        "id" : 1,
+                        "nome": "Falta de luz"
+                    },{
+                        "id" : 2,
+                        "nome": "Buraco na rua"
+                    },{
+                        "id" : 3,
+                        "nome": "Falta de médico"
+                    },{
+                        "id" : 4,
+                        "nome": "Falta de água"
+                    }
+                ]
+        }
+
++ Response 406 (application/json)
+
+        {
+            "mensagem" : "Teste 406!"
+        }
