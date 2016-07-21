@@ -1,6 +1,5 @@
 package layout;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,46 +10,51 @@ import android.widget.TextView;
 import com.example.idenuncia.idenuncia.R;
 import com.example.idenuncia.idenuncia.model.Denuncia;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class ItensAdapter extends BaseAdapter {
-    Context context;
-    List<Denuncia> item;
+    private static ArrayList<Denuncia> listDenuncias;
+    private LayoutInflater mInflater;
 
-    ItensAdapter(Context context, List<Denuncia> item) {
-        this.context = context;
-        this.item = item;
+    public ItensAdapter(Context ctx, ArrayList<Denuncia> results){
+        listDenuncias = results;
+        mInflater = LayoutInflater.from(ctx);
     }
-
     @Override
     public int getCount() {
-        return item.size();
+        return listDenuncias.size();
     }
 
     @Override
-    public Object getItem(int position) {
-        return item.get(position);
+    public Object getItem(int i) {
+        return listDenuncias.get(i);
     }
 
     @Override
-    public long getItemId(int position) {
-        return item.indexOf(getItem(position));
+    public long getItemId(int i) {
+        return i;
     }
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        if (view == null) {
-            LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        ViewHolder holder;
+        if(view == null){
             view = mInflater.inflate(R.layout.item_denuncia, null);
+            holder = new ViewHolder();
+            holder.txtTipDenuncia = (TextView) viewGroup.findViewById(R.id.tipDenuncia);
+            holder.txtQtdLike = (TextView) viewGroup.findViewById(R.id.qtdLike);
+            holder.txtDtDenuncia = (TextView) viewGroup.findViewById(R.id.dtDenuncia);
+            view.setTag(holder);
+        } else {
+            holder = (ViewHolder) view.getTag();
         }
-        TextView txtQtdLike = (TextView) view.findViewById(R.id.qtdLike);
-        TextView txtTipDenuncia = (TextView) view.findViewById(R.id.tipDenuncia);
-        TextView txtDtDenuncia = (TextView) view.findViewById(R.id.dtDenuncia);
+        holder.txtTipDenuncia.setText(listDenuncias.get(position).getTipoDenuncia());
+        holder.txtQtdLike.setText(listDenuncias.get(position).getContadorDenun());
+        holder.txtDtDenuncia.setText(listDenuncias.get(position).getData().toString());
 
-        Denuncia item_pos = item.get(position);
-        txtQtdLike.setText(item_pos.getContadorDenun());
-        txtTipDenuncia.setText(item_pos.getTipoDenuncia());
-        txtDtDenuncia.setText(item_pos.getData().toString());
-        return null;
+        return view;
+    }
+    static class ViewHolder{
+        TextView txtTipDenuncia, txtQtdLike, txtDtDenuncia;
     }
 }

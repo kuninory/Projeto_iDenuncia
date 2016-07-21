@@ -2,9 +2,10 @@ package com.example.idenuncia.idenuncia.model;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Denuncia {
+public class Denuncia implements Serializable{
     private int idDenuncia;
     private int idUser;
     private int contadorDenun;
@@ -31,16 +32,6 @@ public class Denuncia {
 
     public int getContadorDenun() {
         return contadorDenun;
-    }
-
-    public Denuncia(int idDenuncia, int idUser, int contadorDenun, Date data, int tipoDenuncia, LatLng localizacao, String descricao) {
-        this.idDenuncia = idDenuncia;
-        this.idUser = idUser;
-        this.contadorDenun = contadorDenun;
-        this.data = data;
-        this.tipoDenuncia = tipoDenuncia;
-        this.localizacao = localizacao;
-        this.descricao = descricao;
     }
 
     public void setContadorDenun(int contadorDenun) {
