@@ -33,6 +33,16 @@ public class Denuncia {
         return contadorDenun;
     }
 
+    public Denuncia(int idDenuncia, int idUser, int contadorDenun, Date data, int tipoDenuncia, LatLng localizacao, String descricao) {
+        this.idDenuncia = idDenuncia;
+        this.idUser = idUser;
+        this.contadorDenun = contadorDenun;
+        this.data = data;
+        this.tipoDenuncia = tipoDenuncia;
+        this.localizacao = localizacao;
+        this.descricao = descricao;
+    }
+
     public void setContadorDenun(int contadorDenun) {
         this.contadorDenun = contadorDenun;
     }

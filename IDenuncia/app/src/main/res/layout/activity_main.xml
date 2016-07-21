@@ -46,7 +46,6 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_input_add"
         android:tint="@android:color/white"
-        android:onClick="adicionarDenuncia"
         />
 
 </android.support.design.widget.CoordinatorLayout>
