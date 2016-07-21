@@ -19,7 +19,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.NoSubscriberEvent;
 import org.greenrobot.eventbus.Subscribe;
 
-import com.example.idenuncia.idenuncia.MainActivity;
+import com.example.idenuncia.idenuncia.MapsActivity;
 import com.example.idenuncia.idenuncia.R;
 import com.example.idenuncia.idenuncia.model.User;
 import com.example.idenuncia.idenuncia.services.WebTaskLogin;
@@ -165,9 +165,9 @@ public class LoginActivity extends AppCompatActivity {
     @Subscribe
     public void onEvent(User user) {
         mAuthTask = null;
-        showProgress(false);
+        showProgress(true);
 
-        Intent activity = new Intent(this, MainActivity.class);
+        Intent activity = new Intent(this, MapsActivity.class);
         activity.putExtra("message", "olá");
         startActivity(activity);
 
