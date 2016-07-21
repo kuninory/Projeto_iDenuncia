@@ -1,8 +1,8 @@
 package com.example.idenuncia.idenuncia;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+
+    public ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Usuário"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.container);
+        viewPager = (ViewPager) findViewById(R.id.container);
 
         final PagerAdapter adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
@@ -58,23 +60,19 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                /*
-                TESTE - Tenta ir para a tela de login
-                Intent activity = new Intent(this, MainActivity.class);
-                activity.putExtra("message", "olá");
-                startActivity(activity);
-                */
+                abrirMapa(view);
             }
         });
     }
 
+    public void abrirMapa(View view) {
+        Intent activity = new Intent(this, MapsActivity.class);
+        startActivity(activity);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        /*
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        */
+
         return true;
     }
 
@@ -86,5 +84,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void mudarTab(int numTab) {
+        viewPager.setCurrentItem(numTab, false);
     }
 }

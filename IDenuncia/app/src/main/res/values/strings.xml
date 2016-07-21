@@ -8,8 +8,9 @@
     <!-- Strings related to login -->
     <string name="prompt_username">Usuário</string>
     <string name="prompt_password">Senha</string>
-    <string name="action_sign_in">Entrar</string>
+    <string name="action_sign_in">Login</string>
     <string name="action_sign_in_short">Entrar</string>
+    <string name="action_sign_up">Cadastre-se</string>
     <string name="error_field_required">Campo obrigatório</string>
     <string name="error_connection">Sem conexão</string>
     <string name="error_request">Erro na requisição</string>

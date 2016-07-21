@@ -5,8 +5,17 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.idenuncia.idenuncia.MainActivity">
+    android:fitsSystemWindows="false"
+    tools:context="com.example.idenuncia.idenuncia.MainActivity"
+    android:clickable="true">
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center"
+        android:visibility="gone" />
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -42,11 +51,9 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
+        android:layout_gravity="center|bottom"
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_input_add"
-        android:tint="@android:color/white"
-        android:onClick="adicionarDenuncia"
-        />
+        android:tint="@android:color/white" />
 
 </android.support.design.widget.CoordinatorLayout>
