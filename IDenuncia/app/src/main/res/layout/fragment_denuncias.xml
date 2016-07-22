@@ -10,5 +10,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listDenuncias"
-        android:dividerHeight="1sp"/>
+        android:dividerHeight="1sp"
+        android:padding="5dp" />
 </FrameLayout>

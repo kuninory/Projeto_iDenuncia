@@ -7,8 +7,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/imageLike"
                 android:background="@drawable/abc_ic_star_black_36dp"
                 android:layout_below="@+id/tipDenuncia"
@@ -18,18 +18,17 @@
                 android:layout_height="36dp"
                 android:text="06"
                 android:id="@+id/qtdLike"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:layout_marginLeft="141dp"
-                android:layout_marginStart="7dp"
-                android:layout_below="@+id/tipDenuncia"
-                android:layout_toEndOf="@+id/imageLike"
-                android:layout_marginTop="7dp" />
+                android:layout_marginStart="9dp"
+                android:layout_alignTop="@+id/imageLike"
+                android:layout_toEndOf="@+id/imageLike" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Médico ausente"
             android:id="@+id/tipDenuncia"
-            android:textSize="22dp"
+            android:textSize="18dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:textColor="@color/colorPrimaryDark" />
@@ -38,8 +37,9 @@
             android:layout_height="wrap_content"
             android:text="05/06/2016 08:30"
             android:id="@+id/dtDenuncia"
-            android:textSize="20dp"
-            android:layout_alignBottom="@+id/imageLike"
+            android:textSize="16dp"
+            android:layout_alignBaseline="@+id/qtdLike"
+            android:layout_alignBottom="@+id/qtdLike"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
 </LinearLayout>
