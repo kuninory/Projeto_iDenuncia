@@ -1,5 +1,6 @@
 package com.example.idenuncia.idenuncia;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.example.idenuncia.idenuncia.model.Denuncia;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -63,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
                 abrirMapa(view);
             }
         });
+
+        try {
+            readObject(getApplicationContext());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void abrirMapa(View view) {
@@ -88,6 +103,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void mudarTab(int numTab) {
         viewPager.setCurrentItem(numTab, false);
+    }
+
+    /*
+        Chamar o service e enviar o "objDenuncia"
+    */
+    public static void readObject(Context context) throws IOException,ClassNotFoundException {
+        String fileName = "backdenuncia";
+        FileInputStream fis = context.openFileInput(fileName);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        Denuncia objDenuncia = (Denuncia) ois.readObject();
+        /*
+        Chamar o service e enviar o "objDenuncia"
+         Se gravou, chamar:
+
+         context.deleteFile(fileName);
+         */
+
     }
 
 }

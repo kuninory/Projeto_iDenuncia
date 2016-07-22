@@ -1,12 +1,14 @@
 package com.example.idenuncia.idenuncia;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.idenuncia.idenuncia.model.Denuncia;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -18,6 +20,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback,
         GoogleMap.OnInfoWindowClickListener {
@@ -137,5 +143,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
+    }
+
+    public static void writeObject(Context context, Denuncia objDenuncia) throws IOException {
+        FileOutputStream fos = context.openFileOutput("backdenuncia", Context.MODE_PRIVATE);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(objDenuncia);
+        oos.close();
+        fos.close();
     }
 }
