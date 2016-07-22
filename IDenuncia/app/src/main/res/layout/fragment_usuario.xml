@@ -6,6 +6,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/formcad"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -83,7 +84,6 @@
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
-
                 <Button
                     android:id="@+id/btn_login"
                     style="?android:textAppearanceSmall"

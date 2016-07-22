@@ -45,7 +45,7 @@ public class UsuarioFragment extends Fragment {
     private View mLinearL;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_usuario, container, false);
 
@@ -74,6 +74,18 @@ public class UsuarioFragment extends Fragment {
                 attemptLogin(getView());
             }
         });
+
+        rootView.findViewById(R.id.btn_cadastrar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*
+                Não está chamando o fragment
+                 */
+            }
+        });
+        /*
+
+         */
 
         return rootView;
     }

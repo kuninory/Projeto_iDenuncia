@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.idenuncia.idenuncia.R;
 import com.example.idenuncia.idenuncia.model.Denuncia;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class ItensAdapter extends ArrayAdapter<Denuncia> {
@@ -48,7 +49,6 @@ public class ItensAdapter extends ArrayAdapter<Denuncia> {
         public TextView tipDenuncia;
         public TextView qtdLike;
         public TextView dtDenuncia;
-
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -63,20 +63,17 @@ public class ItensAdapter extends ArrayAdapter<Denuncia> {
                 holder.qtdLike = (TextView) vi.findViewById(R.id.qtdLike);
                 holder.dtDenuncia = (TextView) vi.findViewById(R.id.dtDenuncia);
 
-
                 vi.setTag(holder);
             } else {
                 holder = (ViewHolder) vi.getTag();
             }
 
-
             holder.tipDenuncia.setText(listDenuncias.get(position).getNomeTipoDenuncia());
             holder.qtdLike.setText(Integer.toString(listDenuncias.get(position).getContadorDenun()));
-            holder.dtDenuncia.setText(listDenuncias.get(position).getData().toString());
-
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+            holder.dtDenuncia.setText(format.format(listDenuncias.get(position).getData()).toString());
 
         } catch (Exception e) {
-
         }
         return vi;
     }

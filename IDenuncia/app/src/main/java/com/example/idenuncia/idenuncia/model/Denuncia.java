@@ -1,7 +1,5 @@
 package com.example.idenuncia.idenuncia.model;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,7 +10,7 @@ public class Denuncia implements Serializable {
     private Date data;
     private int tipoDenuncia;
     private String nomeTipoDenuncia;
-    private LatLng localizacao;
+    private LatLnge localizacao;
     private String descricao;
 
     public String getNomeTipoDenuncia() {
@@ -63,11 +61,11 @@ public class Denuncia implements Serializable {
         this.tipoDenuncia = tipoDenuncia;
     }
 
-    public LatLng getLocalizacao() {
+    public LatLnge getLocalizacao() {
         return localizacao;
     }
 
-    public void setLocalizacao(LatLng localizacao) {
+    public void setLocalizacao(LatLnge localizacao) {
         this.localizacao = localizacao;
     }
 

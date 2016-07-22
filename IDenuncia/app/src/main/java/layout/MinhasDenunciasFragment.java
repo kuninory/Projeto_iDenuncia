@@ -36,7 +36,7 @@ public class MinhasDenunciasFragment extends Fragment {
         mProgressView = rootView.findViewById(R.id.denun_progress);
         mListView = rootView.findViewById(R.id.listDenuncias);
 
-        mDenunTask = new WebTaskDenuncia(getContext(), "0", "5", "0");
+        mDenunTask = new WebTaskDenuncia(getContext(), "1", "5", "0");
         mDenunTask.execute();
 
         return rootView;
