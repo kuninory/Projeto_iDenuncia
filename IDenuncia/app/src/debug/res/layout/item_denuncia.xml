@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Médico ausente"
+            android:text="Tipo de Denuncia"
             android:id="@+id/tipDenuncia"
             android:textSize="18dp"
             android:layout_alignParentTop="true"

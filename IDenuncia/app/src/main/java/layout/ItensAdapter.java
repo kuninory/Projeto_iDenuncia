@@ -16,10 +16,11 @@ public class ItensAdapter extends BaseAdapter {
     private static ArrayList<Denuncia> listDenuncias;
     private LayoutInflater mInflater;
 
-    public ItensAdapter(Context ctx, ArrayList<Denuncia> results){
+    public ItensAdapter(Context ctx, ArrayList<Denuncia> results) {
         listDenuncias = results;
         mInflater = LayoutInflater.from(ctx);
     }
+
     @Override
     public int getCount() {
         return listDenuncias.size();
@@ -37,20 +38,30 @@ public class ItensAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        ViewHolder holder;
-        if(view == null){
-            view = mInflater.inflate(R.layout.item_denuncia, null);
-            holder = new ViewHolder();
-            holder.txtTipDenuncia = (TextView) viewGroup.findViewById(R.id.tipDenuncia);
-            holder.txtQtdLike = (TextView) viewGroup.findViewById(R.id.qtdLike);
-            holder.txtDtDenuncia = (TextView) viewGroup.findViewById(R.id.dtDenuncia);
-            view.setTag(holder);
-        } else {
-            holder = (ViewHolder) view.getTag();
+        final ViewHolder holder;
+        try {
+            if (view == null) {
+                view = mInflater.inflate(R.layout.item_denuncia, null);
+                holder = new ViewHolder();
+                holder.txtTipDenuncia = (TextView) viewGroup.findViewById(R.id.tipDenuncia);
+                holder.txtQtdLike = (TextView) viewGroup.findViewById(R.id.qtdLike);
+                holder.txtDtDenuncia = (TextView) viewGroup.findViewById(R.id.dtDenuncia);
+                view.setTag(holder);
+            } else {
+                holder = (ViewHolder) view.getTag();
+            }
+
+            holder.txtTipDenuncia.setText(listDenuncias.get(position).getDescricao());
+            holder.txtQtdLike.setText(listDenuncias.get(position).getContadorDenun());
+            holder.txtDtDenuncia.setText(listDenuncias.get(position).getData().toString());
+        } catch (Exception e) {
+
         }
+
         return view;
     }
-    static class ViewHolder{
+
+    static class ViewHolder {
         TextView txtTipDenuncia, txtQtdLike, txtDtDenuncia;
     }
 }

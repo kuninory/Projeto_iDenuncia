@@ -6,27 +6,27 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Denuncia implements Serializable{
-    private int idDenuncia;
-    private int idUser;
+    private String idDenuncia;
+    private String idUser;
     private int contadorDenun;
     private Date data;
     private int tipoDenuncia;
     private LatLng localizacao;
     private String descricao;
 
-    public int getIdDenuncia() {
+    public String getIdDenuncia() {
         return idDenuncia;
     }
 
-    public void setIdDenuncia(int idDenuncia) {
+    public void setIdDenuncia(String idDenuncia) {
         this.idDenuncia = idDenuncia;
     }
 
-    public int getIdUser() {
+    public String getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(int idUser) {
+    public void setIdUser(String idUser) {
         this.idUser = idUser;
     }
 

@@ -4,7 +4,14 @@
     android:layout_height="match_parent"
     tools:context="layout.DenunciasFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Login progress -->
+    <ProgressBar
+        android:id="@+id/denun_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
 
     <ListView
         android:layout_width="wrap_content"
