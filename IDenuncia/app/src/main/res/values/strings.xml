@@ -17,4 +17,11 @@
     <string name="error_invalid_password">Senha inválida</string>
     <string name="error_invalid_email">Email inválido</string>
     <string name="label_error_invalid_response">Resposta inválida do servidor</string>
+    <string name="descDenuncia">Detalhes da denúncia</string>
+    <string name="cadDenunciaButton" />
+    <string name="tipDenuncia1">Falta de luz</string>
+    <string name="tipDenuncia2">Buraco na rua</string>
+    <string name="tipDenuncia3">Falta de médico</string>
+    <string name="tipDenuncia4">Falta de água</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

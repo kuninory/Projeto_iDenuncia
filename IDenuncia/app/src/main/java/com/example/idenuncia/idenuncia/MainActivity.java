@@ -89,4 +89,5 @@ public class MainActivity extends AppCompatActivity {
     public void mudarTab(int numTab) {
         viewPager.setCurrentItem(numTab, false);
     }
+
 }
