@@ -117,22 +117,22 @@ Realiza a busca de denúncias, podendo ser as do próprio usuário ou as dos out
                     },{
                         "idDenuncia" : 999,
                         "tipoDenuncia": 5,
-                        "contadorDenun": 10,
+                        "contadorDenun": 5,
                         "data" : "2016-06-05T07:40:51.620Z"
                     },{
                         "idDenuncia" : 998,
                         "tipoDenuncia": 4,
-                        "contadorDenun": 10,
+                        "contadorDenun": 3,
                         "data" : "2016-06-05T07:35:45.620Z"
                     },{
                         "idDenuncia" : 997,
                         "tipoDenuncia": 2,
-                        "contadorDenun": 10,
+                        "contadorDenun": 8,
                         "data" : "2016-06-05T07:00:00.620Z"
                     },{
                         "idDenuncia" : 996,
                         "tipoDenuncia": 1,
-                        "contadorDenun": 10,
+                        "contadorDenun": 24,
                         "data" : "2016-06-05T05:43:51.998Z"
                     }
                 ]

@@ -36,7 +36,7 @@ public class DenunciasFragment extends Fragment {
         mProgressView = rootView.findViewById(R.id.denun_progress);
         mListView = rootView.findViewById(R.id.listDenuncias);
 
-        mDenunTask = new WebTaskDenuncia(getContext(),"0", "5", "0");
+        mDenunTask = new WebTaskDenuncia(getContext(), "0", "5", "0");
         mDenunTask.execute();
 
         return rootView;
@@ -105,7 +105,7 @@ public class DenunciasFragment extends Fragment {
 
         ArrayList<Denuncia> listContact = getListDenuncia();
         ListView lv = (ListView) getView().findViewById(R.id.listDenuncias);
-        lv.setAdapter(new ItensAdapter(getActivity(), listContact));
+        lv.setAdapter(new ItensAdapter(getActivity(), 0, denunciaList));
 
     }
 

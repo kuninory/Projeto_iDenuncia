@@ -5,14 +5,23 @@ import com.google.android.gms.maps.model.LatLng;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Denuncia implements Serializable{
+public class Denuncia implements Serializable {
     private String idDenuncia;
     private String idUser;
     private int contadorDenun;
     private Date data;
     private int tipoDenuncia;
+    private String nomeTipoDenuncia;
     private LatLng localizacao;
     private String descricao;
+
+    public String getNomeTipoDenuncia() {
+        return nomeTipoDenuncia;
+    }
+
+    public void setNomeTipoDenuncia(String nomeTipoDenuncia) {
+        this.nomeTipoDenuncia = nomeTipoDenuncia;
+    }
 
     public String getIdDenuncia() {
         return idDenuncia;

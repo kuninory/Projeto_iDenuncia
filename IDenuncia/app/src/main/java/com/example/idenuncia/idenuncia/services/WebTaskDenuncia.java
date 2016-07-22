@@ -56,6 +56,7 @@ public class WebTaskDenuncia extends WebTaskBase {
                 Denuncia denuncia = new Denuncia();
                 denuncia.setIdDenuncia(idDenuncia);
                 denuncia.setTipoDenuncia(tipoDenuncia);
+                denuncia.setNomeTipoDenuncia("Tipo da Denúncia");
                 denuncia.setContadorDenun(contadorDenun);
                 denuncia.setData(data);
                 denuncia.setDescricao("");
@@ -84,6 +85,5 @@ public class WebTaskDenuncia extends WebTaskBase {
 
         return jsonString;
     }
-
 
 }
