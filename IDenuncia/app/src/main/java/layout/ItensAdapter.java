@@ -48,10 +48,6 @@ public class ItensAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) view.getTag();
         }
-        holder.txtTipDenuncia.setText(listDenuncias.get(position).getTipoDenuncia());
-        holder.txtQtdLike.setText(listDenuncias.get(position).getContadorDenun());
-        holder.txtDtDenuncia.setText(listDenuncias.get(position).getData().toString());
-
         return view;
     }
     static class ViewHolder{
